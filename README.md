@@ -1,20 +1,26 @@
 # node_mongo
 NodeJS, MongoDB, Express, Docker
 
-### Что это такое?
+### What is it?
 
-Простой пример (заготовка для) использования NodeJS+MongoDB и Docker.
+A simple example using NodeJS + MongoDB and Docker.
 
-## Команды
+## How to use
 
-Запуск проекта с отслеживанием изменений файла **server.js**
+Run Docker containers.
 
-``` 
+```console
+docker-compose up
+```
+
+Starting a project in a development mode (with tracking file changes **server.js**).
+
+```console
 npm run dev
 ```
 
-Запуск проекта
+Starting a project in a production mode.
 
-``` 
+```console
 npm run start
 ```
