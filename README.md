@@ -7,7 +7,7 @@ A simple example using NodeJS + MongoDB and Docker.
 
 ## How to use
 
-## Development
+### Development
 
 Run Docker.
 
@@ -29,7 +29,7 @@ You can run project without Docker.
 machine@user:~$ npm i && npm run dev
 ```
 
-## Production
+### Production
 
 Run Docker.
 
@@ -42,7 +42,7 @@ This bash file run Docker with production configs.
 Also you can run Docker without bash file
 
 ```console
-machine@user:~$ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build
+machine@user:~$ docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build
 ```
 
 You can run project without Docker.
