@@ -3,7 +3,7 @@ const { dbConnect } = require('./db');
 
 const app = express();
 
-const { SERVER_PORT } = process.env;
+const PORT = process.env.SERVER_PORT || 8000;
 
 dbConnect();
 
@@ -11,10 +11,6 @@ app.get('/', function(req, res) {
   res.send('Hello, world!');
 });
 
-app.get('/test', function(req, res) {
-  res.send('Test request!');
-});
-
-app.listen(SERVER_PORT, function() {
-  console.log(`Server start on port: ${SERVER_PORT}`);
+app.listen(PORT, function() {
+  console.log(`Server start on port: ${PORT}`);
 });

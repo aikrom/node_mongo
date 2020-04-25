@@ -9,12 +9,10 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASSWORD
     volumes: 
       - ./data:/data/db
-  nodejs:
-    image: "node:12"
-    container_name: nodejs
-    user: "node"
-    env_file: ".env"
-    working_dir: "/home/src/node/node-mongo"
+  app:
+    container_name: app
+    user: node
+    env_file: .env
     environment: 
       - MONGO_USERNAME=$MONGO_USERNAME
       - MONGO_PASSWORD=$MONGO_PASSWORD
@@ -22,13 +20,6 @@ services:
       - MONGO_PORT=$MONGO_PORT
       - MONGO_DB=$MONGO_DB
     ports: 
-      - "8000:8000"
-    volumes:
-      - .:/home/src/node/node-mongo
-      - ./node_modules:/home/src/node/node-mongo/node_modules
-    command: "npm run dev"
+      - 8000:8000
     depends_on: 
       - mongo
-networks: 
-  app-network:
-    driver: bridge
