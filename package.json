@@ -1,7 +1,7 @@
 {
   "name": "node-mongodb",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple example using NodeJS + MongoDB and Docker.",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
