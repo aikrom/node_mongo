@@ -1,26 +1,52 @@
 # node_mongo
 NodeJS, MongoDB, Express, Docker
 
-### What is it?
+## What is it?
 
 A simple example using NodeJS + MongoDB and Docker.
 
 ## How to use
 
-Run Docker containers.
+## Development
+
+Run Docker.
 
 ```console
-docker-compose up
+machine@user:~$ ./start.sh
 ```
 
-Starting a project in a development mode (with tracking file changes **server.js**).
+This bash file run Docker with development configs (with tracking file changes **server.js**, coping node_modules to host).
+
+Also you can run Docker without bash file
 
 ```console
-npm run dev
+machine@user:~$ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build
 ```
 
-Starting a project in a production mode.
+You can run project without Docker.
 
 ```console
-npm run start
+machine@user:~$ npm i && npm run dev
+```
+
+## Production
+
+Run Docker.
+
+```console
+machine@user:~$ ./start.prod.sh
+```
+
+This bash file run Docker with production configs.
+
+Also you can run Docker without bash file
+
+```console
+machine@user:~$ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build
+```
+
+You can run project without Docker.
+
+```console
+machine@user:~$ npm i && npm run start
 ```
